@@ -55,6 +55,7 @@ func GetROIPFSNode(url string) *ipfs.Shell {
 	return ipfs.NewShell(GlobalNodeURL)
 }
 
+//
 // Encrypt encrypts a given PlainText w/ given Key.
 func Encrypt(pt io.Reader, secret Key) (ct io.Reader, err error) {
 	return senc.Encrypt(secret, pt)
