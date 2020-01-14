@@ -53,15 +53,14 @@ OPTIONS
     --api <ipfs-api-url>     an ipfs node api to use (overrides defaults)
 
 EXAMPLES
-    > ipfs-file-enc share my_secret_dir
-    Enter a 256 bit AES key in multibase:
+    > ipfs-file-enc share my_secret.jpg
 `
 
 func init() {
 	flag.BoolVar(&RandomKey, "random-key", false, "use a randomly generated key (deprecated opt)")
 	flag.StringVar(&Key, "key", "", "an AES encryption key in hex")
 	flag.StringVar(&API, "api", "", "override IPFS node API")
-		flag.Usage = func() {
+	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, Usage)
 	}
 }
